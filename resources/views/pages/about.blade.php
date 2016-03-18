@@ -1,47 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About</title>
+@extends('app')
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('content')
+    <h1>About Me {{$first}}, {{$last}}</h1>
 
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
-
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .content {
-            text-align: center;
-            display: inline-block;
-        }
-
-        .title {
-            font-size: 96px;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="content">
+    {{--@if($first == 'Dan')--}}
+    {{--<h1>Hi {{$last}}, {{$first}}</h1>--}}
+    {{--@else--}}
+    {{--<h1>Hi {{$first}}, {{$last}}</h1>--}}
+    {{----}}
+    {{--@endif    --}}
 
 
-<div class="title">About {  {{ $first }}, {{ $last }}}</div>
-</div>
-</div>
-</body>
-</html>
+    @if(count($people))
+
+        <h3>People I like</h3>
+        <ul>
+            @foreach($people as $person)
+                <li>{{$person}} </li>
+            @endforeach
+
+        </ul>
+    @endif
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+
+    </p>
+
+@stop
